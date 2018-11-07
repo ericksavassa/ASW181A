@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExcluirFuncionariosInativos.cs" />
     <Compile Include="AlteraStatusFuncionario.cs" />
     <Compile Include="CalculaAumentoFuncionario.cs" />
     <Compile Include="DiContainer.cs" />

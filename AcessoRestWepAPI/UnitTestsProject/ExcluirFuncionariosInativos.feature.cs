@@ -17,22 +17,22 @@ namespace UnitTestsProject
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.4.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [TechTalk.SpecRun.FeatureAttribute("AlterarStatusFuncionario", Description="\tIn order to change the status of an employee\r\n\tAs a user of the app\r\n\tI want to " +
-        "be told if the status was changed", SourceFile="AlterarStatusFuncionario.feature", SourceLine=0)]
-    public partial class AlterarStatusFuncionarioFeature
+    [TechTalk.SpecRun.FeatureAttribute("ExcluirFuncionariosInativos", Description="\tIn order to delete inactive employees\r\n\tAs a user of the app\r\n\tI want to be told" +
+        " the amount of employees that was deleted", SourceFile="ExcluirFuncionariosInativos.feature", SourceLine=0)]
+    public partial class ExcluirFuncionariosInativosFeature
     {
         
         private TechTalk.SpecFlow.ITestRunner testRunner;
         
-#line 1 "AlterarStatusFuncionario.feature"
+#line 1 "ExcluirFuncionariosInativos.feature"
 #line hidden
         
         [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
-            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "AlterarStatusFuncionario", "\tIn order to change the status of an employee\r\n\tAs a user of the app\r\n\tI want to " +
-                    "be told if the status was changed", ProgrammingLanguage.CSharp, ((string[])(null)));
+            TechTalk.SpecFlow.FeatureInfo featureInfo = new TechTalk.SpecFlow.FeatureInfo(new System.Globalization.CultureInfo("en-US"), "ExcluirFuncionariosInativos", "\tIn order to delete inactive employees\r\n\tAs a user of the app\r\n\tI want to be told" +
+                    " the amount of employees that was deleted", ProgrammingLanguage.CSharp, ((string[])(null)));
             testRunner.OnFeatureStart(featureInfo);
         }
         
@@ -68,23 +68,21 @@ namespace UnitTestsProject
             testRunner.CollectScenarioErrors();
         }
         
-        [TechTalk.SpecRun.ScenarioAttribute("Change status of employee", new string[] {
+        [TechTalk.SpecRun.ScenarioAttribute("Delete inactive employees", new string[] {
                 "mytag"}, SourceLine=6)]
-        public virtual void ChangeStatusOfEmployee()
+        public virtual void DeleteInactiveEmployees()
         {
-            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Change status of employee", null, new string[] {
+            TechTalk.SpecFlow.ScenarioInfo scenarioInfo = new TechTalk.SpecFlow.ScenarioInfo("Delete inactive employees", null, new string[] {
                         "mytag"});
 #line 7
 this.ScenarioInitialize(scenarioInfo);
             this.ScenarioStart();
 #line 8
- testRunner.Given("I have entered 1 into the Id", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
+ testRunner.Given("I have one inactive employee in database", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 9
- testRunner.And("I have entered \"S\" into the Status", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I press ExcluirInativos", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 10
- testRunner.When("I press AlterarStatus", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
-#line 11
- testRunner.Then("the result should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
+ testRunner.Then("the amount should be 1", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
         }

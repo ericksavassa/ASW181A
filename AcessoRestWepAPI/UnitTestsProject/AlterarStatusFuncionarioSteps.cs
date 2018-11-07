@@ -12,7 +12,7 @@ namespace UnitTestsProject
         private int result = 0;
         TestAlteraStatusFuncionario testAlteraStatus = new TestAlteraStatusFuncionario();
 
-        [Given(@"I have entered (.*) into the Status")]
+        [Given(@"I have entered (.*) into the Id")]
         public void GivenIHaveEnteredIntoTheStatus(int idFuncionario)
         {
             status.IdFuncionario = idFuncionario;

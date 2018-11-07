@@ -83,6 +83,20 @@
             return result;
         }
 
+        public int ExcluiFuncionario(int id)
+        {
+            Log.WriteLog("    Excluindo funcionario");
+            var inicioGrava = DateTime.Now;
+
+            var result = Access.Execute(@"DELETE FROM DEPENDENTE WHERE PESSOA = @ID
+                                          DELETE FROM PESSOA WHERE ID = @ID", 
+                                          new { id });
+                        
+            Log.WriteLog($"    Funcionário excluído com sucesso");
+            Log.WriteLog($"    Tempo de Gravação no banco         : {DateTime.Now - inicioGrava}");
+            return result;
+        }
+
         public int PersisteFuncionario(Funcionario funcionario)
         {
             if (funcionario == null)

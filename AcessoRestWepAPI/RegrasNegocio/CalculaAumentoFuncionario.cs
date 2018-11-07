@@ -117,8 +117,8 @@
         var percentualDep = (0.01M * dependentesMulheres);
 
         var anosTrabalhados = RetornaAnosTrabalhados(funcionario);
-        WriteLog($"    Anos trabalhados (Limitado a 3): {anosTrabalhados}");
-        var percentualAnos = (0.02M * RetornaAnosTrabalhados(funcionario));
+        WriteLog($"    Anos trabalhados (Limitado a 10): {anosTrabalhados}");
+        var percentualAnos = (0.01M * RetornaAnosTrabalhados(funcionario));
 
         PercentualCalculado = percentual + percentualAnos + percentualDep;
         WriteLog($"    Percentual Final = ({percentual-1}) + ({percentualAnos}) + {percentualDep} = [{(PercentualCalculado-1) * 100}%]  ");
@@ -162,7 +162,7 @@
     protected int RetornaAnosTrabalhados(Funcionario funcionario)
     {
       var anosTrabalhados = (((DateTime.Now - funcionario.inicioContrato)).Days / 365);
-      anosTrabalhados = Tops(3, anosTrabalhados);
+      anosTrabalhados = Tops(10, anosTrabalhados);
       return anosTrabalhados;
     }
 

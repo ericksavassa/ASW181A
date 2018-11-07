@@ -40,6 +40,18 @@ namespace AcessoRestWepAPI.Controllers
             return logCalculo;
         }
 
+        public string ExcluirInativos()
+        {
+            string logCalculo = string.Empty;
+            using (var persistencia = new PersistenciaFuncionario(CriaAccess(), new LogWriter()))
+            {
+                var excluir = new ExcluirFuncionariosInativos(persistencia, new LogWriter(), new LogWriter());
+                excluir.ExcluirInativos();
+                logCalculo = excluir.Log;
+            }
+            return logCalculo;
+        }
+
         private IDbAccess CriaAccess()
         {
             return new DbAccess(new SqlConnection("Server=localhost\\MSSQLSERVER2014;Database=TESTEUNITARIO;Trusted_Connection=True; user id =rm;password=rm"));

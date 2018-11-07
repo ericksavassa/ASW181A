@@ -22,6 +22,7 @@ namespace RegrasNegocio
         List<Funcionario> RetornaFuncionarios();
         Funcionario BuscaFuncionario(string id);
         int AlteraFuncionario(int id, string novoStatus);
+        int ExcluiFuncionario(int id);
         void ClearLog();
     }
 }

@@ -88,6 +88,13 @@
     </Compile>
     <Compile Include="AlterarStatusFuncionarioSteps.cs" />
     <Compile Include="ClasseBaseTestesUnitarios.cs" />
+    <Compile Include="ExcluirFuncionariosInativos.feature.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExcluirFuncionariosInativos.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ExcluirFuncionariosInativosSteps.cs" />
+    <Compile Include="TestExcluiFuncionariosInativos.cs" />
     <Compile Include="TestAlteraStatusFuncionario.cs" />
     <Compile Include="TestCalculaAumentoFuncionario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -99,6 +106,10 @@
     </None>
     <None Include="app.config" />
     <None Include="Default.srprofile" />
+    <None Include="ExcluirFuncionariosInativos.feature">
+      <Generator>SpecFlowSingleFileGenerator</Generator>
+      <LastGenOutput>ExcluirFuncionariosInativos.feature.cs</LastGenOutput>
+    </None>
     <None Include="packages.config" />
     <None Include="runtests.cmd" />
     <None Include="SpecRunTestProfile.xsd">

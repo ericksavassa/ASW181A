@@ -84,4 +84,37 @@
         }); 
     });
 
+
+    $('#ExcluirInativos').click(function () {
+        var _url = 'http://' + window.location.host + '/';
+        $.ajax({
+            url: _url + "Home/ExcluirInativos",
+            success: function (result) {
+                resultadoLog(result);
+            },
+            error: function (data) {
+            },
+            complete: function () {
+            }
+        })
+    });
+
+    $('#ExcluirInativosWebAPI').click(function () {
+
+        var _url = 'http://' + window.location.host + '/';
+        $.ajax({
+            url: _url + "api/values",
+            type: 'DELETE',
+            datatype: 'json',
+            contentType: 'application/text',
+            success: function (logresult) {
+                resultadoLog(logresult);
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                throw errorThrown;
+            }
+        });
+    });
+
+  
 })();

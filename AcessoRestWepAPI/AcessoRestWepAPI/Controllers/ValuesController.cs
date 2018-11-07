@@ -53,11 +53,19 @@ namespace AcessoRestWepAPI.Controllers
             return logCalculo;
         }
 
-        // DELETE api/values/5
-        public void Delete(int id)
+        // DELETE api/values/
+        public string Delete()
         {
+            string logCalculo = string.Empty;
+            using (var persistencia = new PersistenciaFuncionario(CriaAccess(), new LogWriter()))
+            {
+                var excluir = new ExcluirFuncionariosInativos(persistencia, new LogWriter(), new LogWriter());
+                excluir.ExcluirInativos();
+                logCalculo = excluir.Log;
+            }
+            return logCalculo;
         }
-
+        
         private IDbAccess CriaAccess()
         {
             return new DbAccess(new SqlConnection("Server=localhost\\MSSQLSERVER2014;Database=TESTEUNITARIO;Trusted_Connection=True;user id=rm;password=rm;"));
